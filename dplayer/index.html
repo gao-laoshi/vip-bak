@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>谭记者</title>
+<!-- <script src="http://cdn.jsdelivr.net/npm/xgplayer/browser/index.js" charset="utf-8"></script>
+<script src="http://cdn.jsdelivr.net/npm/xgplayer-flv.js/browser/index.js" charset="utf-8"></script>-->
+
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>
+<script src="DPlayer.min.js"></script>
+<script src="flv.min.js"></script>
+    <script src="hls.min.js"></script>
+    <script src="dash.all.min.js"></script>
+    <script src="webtorrent.min.js"></script>
+    <script src="pear-player.min.js"></script>
+</head>
+<body>
+	<h1><a href="javascript:window.location.reload()">谭记者</a></h1>
+	<!-- <div class="box-body table-responsive no-padding">
+		<a href="谭记者传的文件0.mp4">谭记者</a>
+		<a href="FormatFactoryPart1.mp4">谭记者22</a>
+        <a href="favicon.ico">test</a>
+        <img src="favicon.ico">
+        <video src="FormatFactoryPart1.mp4">
+	</div> -->
+	<!-- <div id="player"></div> -->
+	<div>
+		<video id="video1" class="video-js vjs-default-skin" width="640" height="480"
+        data-setup='{"controls" : true, "autoplay" : true, "preload" : "auto"}'>
+        <source src="http://wenminghainan.gitee.io/reporter/test3.flv" type="video/flv">
+    </video>
+	</div>
+	<div id="dplayer"></div>
+
+<script >
+/*var dplayer = new DPlayer({
+    element: document.getElementById('dplayer'),
+    autoplay: false,
+    theme: '#FADFA3',
+    loop: false,
+    screenshot: true, //截屏
+    hotkey: false,
+    //logo: '/public/assets/images/server/favicon.ico',
+    video: {  //视频源 包含不同分辨率源
+        quality: [{
+            name: '流畅',
+            //url: 'https://vd2.bdstatic.com/mda-kimsg1gduq7g9ntd/sc/cae_h264_clips/mda-kimsg1gduq7g9ntd.mp4?auth_key=1600797777-0-0-538e727ffbf1d87fad6be815120efedf&bcevod_channel=searchbox_feed&pd=1&pt=3'
+            url: 'http://wenminghainan.gitee.io/reporter/tan.flv'
+        },{
+            name: '高清',
+            url: 'http://wenminghainan.gitee.io/reporter/tanhd.mp3'
+        }],
+        defaultQuality: 0,
+        pic: '',
+        type: 'flv'
+    }
+});*/
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        /*url: 'http://wenminghainan.gitee.io/reporter/tan.mp3',*/
+        quality: [{
+            name: '流畅',
+            url: 'http://wenminghainan.gitee.io/reporter/tan.mp3'
+        },{
+            name: '高清',
+            url: 'http://wenminghainan.gitee.io/reporter/tanhd.mp3'
+        }],
+        defaultQuality: 0,
+        type: 'pearplayer',
+    }/*,
+    pluginOptions: {
+        flv: {
+            // refer to https://github.com/bilibili/flv.js/blob/master/docs/api.md#flvjscreateplayer
+            mediaDataSource: {
+                // mediaDataSource config
+            },
+            config: {
+                // config
+            },
+        },
+    },*/
+});
+//console.log(dp.plugins.flv); // flv instance
+
+/*
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        url: 'https://qq.webrtc.win/tv/Pear-Demo-Yosemite_National_Park.mp4',
+        type: 'pearplayer',
+        customType: {
+            pearplayer: function (video, player) {
+                new PearPlayer(video, {
+                    src: video.src,
+                    autoplay: player.options.autoplay,
+                });
+            },
+        },
+    },
+});
+*/
+</script>
+	
+<!-- <script src="jquery/dist/jquery.min.js"></script>
+ -->
+
+	<!-- <script type="text/javascript">
+	    new window.FlvJsPlayer({
+	        id: 'player',
+	        isLive: false,
+	        playsinline: true,
+	        url: 'http://wenminghainan.gitee.io/reporter/test.flv',
+	        autoplay: true,
+	        height: window.innerHeight,
+	        width: window.innerWidth
+	    });
+	</script> -->
+</body>
+</html>

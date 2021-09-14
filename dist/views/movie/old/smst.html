@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<!--<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>-->
+<script src="DPlayer.min.js"></script>
+<script src="hls.min.js"></script>
+
+	<h1><!-- <a href="javascript:window.location.reload()"> -->唐人街探案3<!-- </a> --></h1>
+	<div id="dplayer"></div>
+	<img alt="" src="https://iknow-pic.cdn.bcebos.com/fc1f4134970a304ea51fa4cbd4c8a786c9175cc5">
+	<img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAYAAABIdFAMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHhJREFUeNo8zjsOxCAMBFB/KEAUFFR0Cbng3nQPw68ArZdAlOZppPFIBhH5EAB8b+Tlt9MYQ6i1BuqFaq1CKSVcxZ2Acs6406KUgpt5/LCKuVgz5BDCSb13ZO99ZOdcZGvt4mJjzMVKqcha68iIePB86GAiOv8CDADlIUQBs7MD3wAAAABJRU5ErkJggg%3D%3D">
+	
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAYAAABIdFAMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHhJREFUeNo8zjsOxCAMBFB/KEAUFFR0Cbng3nQPw68ArZdAlOZppPFIBhH5EAB8b+Tlt9MYQ6i1BuqFaq1CKSVcxZ2Acs6406KUgpt5/LCKuVgz5BDCSb13ZO99ZOdcZGvt4mJjzMVKqcha68iIePB86GAiOv8CDADlIUQBs7MD3wAAAABJRU5ErkJggg%3D%3D"/>
+
+<script >
+let origin = location.origin;
+/*let url = origin + '/Detective.Chinatown.3.2021.HD1080P.X264.AAC.Mandarin.CHS.mp4';*/
+//let url = 'https://pcvideohwyun.titan.mgtv.com/c1/internettv/2021/09/07_0/B5B9EF8FD557DE401B7D12A725F08CD6_20210907_1_1_2144_ts/3AA49F4D70AF8DA445008C3CCDB0AFE9.m3u8?arange=0&pm=aZhsFlXbLWPU4W2m68gth5euNk7w5I8rotdaHaSttskcWsmmuROfyNFJFUAwJhx5Y_S0kNvXQvqBoXy7WOZCzfE039CuKgwnljpsPPnb_74wInNnnrURkocyZg8Xvm6R_wtv6ZIDjpwLVlNY~twWPcUjFiATs3Tp6jguWW387k0AFDXGnn1BG0uBERyGOZlJIXAerGrD8OF0LtcuymOUzJdk2wMWXgvEDNzTe3F~8NGDni5oNA06ezx6cQubXoqewvozKvfJQN6KTVXdHHGHLjLdSBwhedOVwiPcusoto0Bj_vVdWuZAozldBedUJS~qk1JUNNZI0vkF1mSTZ_8ZlDouGs5RtW9mZov9m3BbrKbWAuxXOOkoWHpDbB6R04omGoxlgl9UTiuDxelSIqYiNnBooLe_OYs0CXlmf~fp_TaWWAFF87V0IHcVHf49GmIb&mr=Ivd6uo9UFkpSaWQYiLjW5rbcQ6KGgipn0D2uiP_NjfwKPGuYtuIoglyDnRoVG8XdTG1nGqjdjE_Ma4~eqyNqHsPKG8C8n8~LaXtikaboSCf21Sa5TVH7CyRMPC3t0pTo0wQtmJaPNng3N31dVnuQGvKcSby9pr_7P7SejXryscAuqRlo3lJGb6DU9ZABgPaLJRvhTgiWT1BDLV9LvkS3KA--&mac_id=08-00-27-52-29-12&version=6.0.601.390.3.FANQIE_TVAPP.0.0_Release&mf=Hisense&mod=Hisense75E5G&vcdn=0&scid=25041&cpno=6y17vy&ruid=1f9190ceb34f4f7c';
+//let url = 'https://pcvideohwyun.titan.mgtv.com/c1/internettv/2021/09/07_0/B5B9EF8FD557DE401B7D12A725F08CD6_20210907_1_1_2144_ts/3AA49F4D70AF8DA445008C3CCDB0AFE9.m3u8';
+//let url = 'http://yuxiaomiao.gitee.io/living/%E5%8F%8C%E9%9D%A2%E7%A5%9E%E6%8E%A201.m3u8';
+
+let url = 'https://download.cloud.189.cn/file/downloadFile.action?dt=51&expired=1631112102277&sk=9458155a-272f-45af-81cc-76f41a6932f6&ufi=51374114092393764&zyc=5&token=cloud4&sig=OVpeWdRWJ%2F%2BZ4PiG5xxqg5fi0nE%3D';
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        quality: [{
+            name: '1080p',
+            url: url
+        }],
+        defaultQuality: 0,
+        type: 'hls',
+    }
+});
+</script>
+</body>
+</html>

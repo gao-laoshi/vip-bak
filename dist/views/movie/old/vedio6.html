@@ -1,0 +1,42 @@
+
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+<title>扫黑·决战</title>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a lay-href="movie/movie">返回电影列表</a>
+    <a><cite>扫黑·决战</cite></a>
+  </div>
+</div>
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<!--<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>-->
+<script src="dplayer/DPlayer.min.js"></script>
+
+	<h2><!-- <a href="javascript:window.location.reload()"> -->扫黑·决战 (<!-- 2k画质,h265编码，手机测试正常，电脑黑屏，待解决 -->1080P,2K画质可选)<!-- </a> --></h2>
+	<div id="dplayer"></div>
+
+<script >
+let origin = location.origin;
+let url = origin + '/Break Through the Darkness WEB-DL 1080P x264 AAC CHS.mp4';
+let url2 = origin + '/Break Through the Darkness WEB-DL 2160P x265 AAC CHS.mp4';
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        quality: [{
+            name: '1080p',
+            url: url
+        },{
+            name: '2k',
+            url: url2
+        }],
+        defaultQuality: 0,
+        type: 'auto',
+    }
+});
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>直接嵌入</h1>
+	<div id="div" style="width:1000px;" >
+	<!-- <iframe height=498 width=500 frameborder=0 allowfullscreen="true"
+	src='https://vip.parwix.com:4433/player/?url=https://www.mgtv.com/b/387110/14011533.html'></iframe> -->
+	<!-- 复制 -->
+	<!-- <iframe id="palyer-iframe"  allowtransparency="true" frameborder="0" scrolling="no" 
+		allowfullscreen="true" name="jx_play" style="height: 459.9px;" __idm_id__="363640833"
+		src="https://vip.parwix.com:4433/player/?url=https://www.mgtv.com/b/387110/14011533.html"></iframe> -->
+	<iframe id="palyer-iframe"  allowtransparency="true" frameborder="0" scrolling="no" 
+		allowfullscreen="true" name="jx_play" width=100% __idm_id__="363640833"
+		src="https://jsap.attakids.com/?url=https://www.iqiyi.com/v_1d0dmvryo2o.html"></iframe>
+	</div>
+	
+	
+	<div id="in"></div>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			//$("#in").load("https://vip.parwix.com:4433/player/?url=https://www.mgtv.com/b/387110/14011533.html");
+			
+			
+			/*$.ajax({
+	            type: "get", 
+	            async: false,
+	            url: "https://vip.parwix.com:4433/player/?url=https://www.mgtv.com/b/387110/14011533.html",
+	            dataType: "jsonp",   // 设置为jsonP 类型。
+                jsonp: "callback",
+                jsonpCallback: "callback",
+	            contentType: "text/html", 
+	            success: function (res) {
+	                console.log(res)
+	            },
+	            error: function (err) {
+                    console.log(err);
+                }
+	        })*/
+	        $("#palyer-iframe").attr("height",$("#div").width()*9/16)
+		})
+	</script>
+</body>
+
+</html>

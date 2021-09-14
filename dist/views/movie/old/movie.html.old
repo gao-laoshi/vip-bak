@@ -1,0 +1,140 @@
+
+<title>电影</title>
+  <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+  <META HTTP-EQUIV="expires" CONTENT="0">
+  <META HTTP-EQUIV="Cache" CONTENT="no-cache"> 
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a><cite>电影</cite></a>
+  </div>
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+/* #LAY-component-grid-list .demo-list .layui-card{height: 267px;} */
+/* .layui-card{cursor: pointer;} */
+.layui-card>span{text-align: center;display: block;}
+.layui-card>img{width: 100%; /*height: 248px;*/ /*object-fit: cover;*/}
+</style>
+
+<!-- <div class="layui-fluid" id="LAY-component-grid-list">
+  <div class="layui-row layui-col-space10 demo-list"> -->
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space10">
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6" id="auto-wh">
+      <!-- 填充内容 -->
+      <!-- <div class="layui-card" οnclick="window.location.href='http://movie.wx1314.vip/Detective.Chinatown.3.2021.HD1080P.X264.AAC.Mandarin.CHS.mp4'"> -->
+      <!-- <div class="layui-card" onclick="window.open('http://112.98.96.34:60001/Detective.Chinatown.3.2021.HD1080P.X264.AAC.Mandarin.CHS.mp4','_self')"> -->
+      <a onclick="play()" lay-href="movie/vedio">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/唐人街探案3.jpg">
+	      <span>唐人街探案3</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio3">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/你好李焕英.jpg">
+	      <span>你好，李焕英</span>
+	    </div>
+      </a>
+    </div>
+    
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio7">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/日不落酒店.jpg">
+	      <span>日不落酒店</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio8">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/总是有爱在隔离.jpg">
+	      <span>总是有爱在隔离</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio9">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/电锯惊魂9.jpg">
+	      <span>电锯惊魂9：漩涡</span>
+	    </div>
+      </a>
+    </div>
+    
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio6">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/扫黑决战.jpg">
+	      <span>扫黑·决战</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio5">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/温暖的抱抱.jpg">
+	      <span>温暖的抱抱</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio2">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/刺杀小说家.jpg">
+	      <span>刺杀小说家</span>
+	    </div>
+      </a>
+    </div>
+    <div class="layui-col-sm4 layui-col-md3 layui-col-lg2 layui-col-xs6">
+      <a onclick="play()" lay-href="movie/vedio4">
+	    <div class="layui-card">
+	      <img alt="" src="image/movie/第十一回.jpg">
+	      <span>第十一回</span>
+	    </div>
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+layui.use(['admin'], function(){
+  var $ = layui.$
+  ,admin = layui.admin
+  ,table = layui.table
+  ,element = layui.element;
+  
+});
+function play(){
+	
+}
+$("#LAY_app_flexible").click(function(){
+  setTimeout(function() {
+	
+	let w = $(".layui-card img:first").width();
+	let h = w * 1.43;
+	$(".layui-card img").height(h);
+  }, 300);
+});
+
+/* $("#auto-wh").resize(function(){ */
+	/* let winW = $("div img:first").width();
+	/* $("video").attr("width", winW); 
+	console.log(winW); */
+/* }); */
+$(function () {
+    
+	let w = $(".layui-card img:first").width();
+	let h = w * 1.43;
+	$(".layui-card img").height(h);
+    
+});
+</script>

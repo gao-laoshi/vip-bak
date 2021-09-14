@@ -1,0 +1,101 @@
+
+<title>电视剧</title>
+  <META HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+  <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
+  <META HTTP-EQUIV="expires" CONTENT="0">
+  <META HTTP-EQUIV="Cache" CONTENT="no-cache"> 
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a lay-href="movie/tvPlay">返回电视剧列表</a>
+    <a><cite id="tv-name"></cite></a>
+  </div>
+</div>
+
+<style>
+/* 这段样式只是用于演示 */
+/* #LAY-component-grid-list .demo-list .layui-card{height: 267px;} */
+/* .layui-card{cursor: pointer;} */
+.layui-card>span{text-align: center;display: block;}
+.layui-card>img{width: 100%; /*height: 248px;*/ /*object-fit: cover;*/}
+#menu-list {padding-left: 10px; padding-top: 10px;}
+.layui-btn-sm {padding: 0 0px; width: 30px;}
+</style>
+<script src="data/tvPlays.js"></script>
+<script src="dplayer/DPlayer.min.js"></script>
+<h1 id="tv-name-t"></h1>
+<div id="dplayer" class="layui-col-sm12 layui-col-md10 layui-col-lg10 layui-col-xs12"></div>
+<div id="menu-list" class="layui-btn-container layui-col-sm12 layui-col-md2 layui-col-lg2 layui-col-xs12">
+  <!-- 
+  <button type="button" class="layui-btn">默</button>
+  <button type="button" class="layui-btn layui-btn-sm">小</button>
+   -->
+</div> 
+<script>
+layui.use(['admin'], function(){
+  var $ = layui.$
+  ,admin = layui.admin
+  ,table = layui.table
+  ,element = layui.element;
+  
+});
+var index;
+$(function () {
+	index = location.hash.split("?")[1].split("&")[0].split("=")[1];
+	$("#tv-name").html(list[index].name);
+	generateDPlayer();
+    
+	generateMenuList();
+	
+	$(".episode").click(function(){
+    	doChangeEpisode($(this).attr("index-id"));
+    });
+});
+
+function doChangeEpisode(episode_){
+	console.log(episode_)
+	location.href = location.href.split("?")[0] +"?index=" + index + "&episode=" + episode_;
+}
+
+function generateMenuList(){
+	var menuList = $("#menu-list");
+	menuList.html("");
+	var menuListStr = "";
+	for(var i = 0; i < list[index].size; i++){
+		//menuListStr += '<button type="button" class="layui-btn layui-btn-sm">' + (i + 1 +"").padStart(2, "0") + '</button>';
+		menuListStr += '<button type="button" index-id="' + i + '" class="episode layui-btn layui-btn-sm">' + generatePadStart(i + 1 + "", 2, "0") + '</button>';
+	}
+	menuList.append(menuListStr);
+	$(".episode:eq(" + location.hash.split("?")[1].split("&")[1].split("=")[1] + ")").attr("class", "episode layui-btn layui-btn-sm layui-btn-warm");
+}
+
+function generateDPlayer(){
+	let origin = location.origin;
+	let index_ = location.hash.split("?")[1].split("&")[0].split("=")[1];
+	let episode_ = location.hash.split("?")[1].split("&")[1].split("=")[1];
+	//let url = origin + '/A.Writers.Odyssey.2021.HD1080P.X264.AAC.Mandarin.mp4';
+	let url = origin + list[index_].pre + generatePadStart(parseInt(episode_) + 1 + "", 2, "0") + list[index_].suf;
+	const dp = new DPlayer({
+	    container: document.getElementById('dplayer'),
+	    autoplay: true,
+	    video: {
+	        quality: [{
+	            name: '1080p',
+	            url: url
+	        }],
+	        defaultQuality: 0,
+	        type: 'normal'
+	    }
+	});
+}
+
+function generatePadStart(originalString, targetLength, padString){
+	var padZero = "";
+	for(var i = 0; i < targetLength - originalString.length; i++){
+		padZero += padString;
+	}
+	//console.log(padZero + originalString);
+	return padZero + originalString;
+}
+</script>

@@ -1,0 +1,38 @@
+
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+<title>总是有爱在隔离</title>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a lay-href="movie/movie">返回电影列表</a>
+    <a><cite>总是有爱在隔离</cite></a>
+  </div>
+</div>
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<!--<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>-->
+<script src="dplayer/DPlayer.min.js"></script>
+
+	<h1><!-- <a href="javascript:window.location.reload()"> -->总是有爱在隔离<!-- </a> --></h1>
+	<div id="dplayer"></div>
+
+<script >
+let origin = location.origin;
+let url = origin + '/总是有爱在隔离.All U Need Is Love 2021 WEB-DL 1080p H264 DDP 2.1-国粤双语.中英字幕.mp4';
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        quality: [{
+            name: '1080p',
+            url: url
+        }],
+        defaultQuality: 0,
+        type: 'auto',
+    }
+});
+</script>

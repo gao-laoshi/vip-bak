@@ -1,0 +1,53 @@
+
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+<title>唐人街探案3</title>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a lay-href="movie/movie">返回电影列表</a>
+    <a><cite>唐人街探案3</cite></a>
+  </div>
+</div>
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<!--<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>-->
+<script src="dplayer/hls.min.js"></script>
+<script src="dplayer/DPlayer.min.js"></script>
+
+	<h1><!-- <a href="javascript:window.location.reload()"> -->唐人街探案3<!-- </a> --></h1>
+	<div id="dplayer"></div>
+
+<script >
+let origin = location.origin;
+/*let url = origin + '/Detective.Chinatown.3.2021.HD1080P.X264.AAC.Mandarin.CHS.mp4';*/
+//let url = 'https://pcvideohwyun.titan.mgtv.com/c1/internettv/2021/09/07_0/B5B9EF8FD557DE401B7D12A725F08CD6_20210907_1_1_2144_ts/3AA49F4D70AF8DA445008C3CCDB0AFE9.m3u8?arange=0&pm=aZhsFlXbLWPU4W2m68gth5euNk7w5I8rotdaHaSttskcWsmmuROfyNFJFUAwJhx5Y_S0kNvXQvqBoXy7WOZCzfE039CuKgwnljpsPPnb_74wInNnnrURkocyZg8Xvm6R_wtv6ZIDjpwLVlNY~twWPcUjFiATs3Tp6jguWW387k0AFDXGnn1BG0uBERyGOZlJIXAerGrD8OF0LtcuymOUzJdk2wMWXgvEDNzTe3F~8NGDni5oNA06ezx6cQubXoqewvozKvfJQN6KTVXdHHGHLjLdSBwhedOVwiPcusoto0Bj_vVdWuZAozldBedUJS~qk1JUNNZI0vkF1mSTZ_8ZlDouGs5RtW9mZov9m3BbrKbWAuxXOOkoWHpDbB6R04omGoxlgl9UTiuDxelSIqYiNnBooLe_OYs0CXlmf~fp_TaWWAFF87V0IHcVHf49GmIb&mr=Ivd6uo9UFkpSaWQYiLjW5rbcQ6KGgipn0D2uiP_NjfwKPGuYtuIoglyDnRoVG8XdTG1nGqjdjE_Ma4~eqyNqHsPKG8C8n8~LaXtikaboSCf21Sa5TVH7CyRMPC3t0pTo0wQtmJaPNng3N31dVnuQGvKcSby9pr_7P7SejXryscAuqRlo3lJGb6DU9ZABgPaLJRvhTgiWT1BDLV9LvkS3KA--&mac_id=08-00-27-52-29-12&version=6.0.601.390.3.FANQIE_TVAPP.0.0_Release&mf=Hisense&mod=Hisense75E5G&vcdn=0&scid=25041&cpno=6y17vy&ruid=1f9190ceb34f4f7c';
+//let url = 'https://pcvideohwyun.titan.mgtv.com/c1/internettv/2021/09/07_0/B5B9EF8FD557DE401B7D12A725F08CD6_20210907_1_1_2144_ts/3AA49F4D70AF8DA445008C3CCDB0AFE9.m3u8';
+//let url = 'http://yuxiaomiao.gitee.io/living/%E5%8F%8C%E9%9D%A2%E7%A5%9E%E6%8E%A201.m3u8';
+//let url = 'https://download.cloud.189.cn/file/downloadFile.action?dt=51&expired=1631112102277&sk=9458155a-272f-45af-81cc-76f41a6932f6&ufi=51374114092393764&zyc=5&token=cloud4&sig=OVpeWdRWJ%2F%2BZ4PiG5xxqg5fi0nE%3D';
+//let url = 'https://download.cloud.189.cn/file/downloadFile.action?dt=51&expired=1631154493325&sk=9458155a-272f-45af-81cc-76f41a6932f6&ufi=41408114090761555&zyc=5&token=cloud4&sig=p%2B7PLrpEW6W1nv7aX9SQDiz6hjE%3D';
+////let url = 'https://cloud189-shh2-person.oos-sh2.ctyunapi.cn/403f9e9f-b7eb-4e3d-a6ec-718cea64b4f6.mp4?response-content-disposition=attachment%3Bfilename%3D%2201.mp4%22&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-CLOUDTYPEIN=PERSON&x-amz-limit=rate%3D10240%2Cconcurrency%3D12&x-amz-CLIENTTYPEIN=WEB&Signature=RmYIKMGeX/0J66TsTLm7sU8F9ks%3D&AWSAccessKeyId=e975956edda0be55c086&Expires=1631158401&response-content-type=video/mp4&x-amz-FSIZE=1405855781&x-amz-UID=46287631&x-amz-UFID=51374114092393764';
+//let url = 'https://media-hbsjz-person.heoss.xstore.ctyun.cn/PERSONCLOUD/e2210756-7ce2-4e21-8cfe-71dd2bd6c9c9.m4v?response-content-disposition=attachment%3Bfilename%3D%22%E5%8F%8C%E9%9D%A2%E7%A5%9E%E6%8E%A207.m4v%22&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=WEB&Signature=ubn772j7lUlmRVes3mrKq4UBmew%3D&AWSAccessKeyId=g6jU1T3TkAbPKf5ouH5d&Expires=1631156519&x-amz-limitrate=10240&x-amz-FSIZE=517232932&x-amz-UID=46287631&x-amz-UFID=51476114237376895';
+//let url = 'https://cloud189-shh2-person.oos-sh2.ctyunapi.cn/1bae3696-9161-40ff-964b-82ae35b374f9.mp4?response-content-disposition=attachment%3Bfilename%3D%2202.mp4%22&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-CLOUDTYPEIN=PERSON&x-amz-limit=rate%3D10240%2Cconcurrency%3D12&x-amz-CLIENTTYPEIN=WEB&Signature=6scb/lv248Y9xxdtEfn/XCSp2hg%3D&AWSAccessKeyId=e975956edda0be55c086&Expires=1631158041&response-content-type=video/mp4&x-amz-FSIZE=1406693750&x-amz-UID=46287631&x-amz-UFID=41408114090761555';
+
+
+let url = 'https://media-hbsjz-person.heoss.xstore.ctyun.cn/PERSONCLOUD/af2064ad-2778-4cd1-9187-3ac4eb46095c.mp4?response-content-disposition=attachment%3Bfilename%3D%22%E5%8F%8C%E9%9D%A2%E7%A5%9E%E6%8E%A208.mov%22&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-CLOUDTYPEIN=PERSON&x-amz-CLIENTTYPEIN=WEB&Signature=zuCrD48itHyttjvQM0xYTbTLu8U%3D&AWSAccessKeyId=g6jU1T3TkAbPKf5ouH5d&Expires=1631337445&x-amz-limitrate=10240&response-content-type=video/quicktime&x-amz-FSIZE=524221832&x-amz-UID=46287631&x-amz-UFID=41546114236865677';
+
+
+
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        quality: [{
+            name: '1080p',
+            url: url
+        }],
+        defaultQuality: 0,
+        type: 'normal',
+    }
+});
+</script>

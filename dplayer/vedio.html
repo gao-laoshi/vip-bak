@@ -1,0 +1,41 @@
+
+<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"> -->
+<title>唐人街探案3</title>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">点击返回主页</a>
+    <a><cite>电影</cite></a>
+    <a><cite>唐人街探案3</cite></a>
+  </div>
+</div>
+<style type="text/css">
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color:inherit;
+}
+</style>
+<!--<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/c/video.js"></script>-->
+<script src="DPlayer.min.js"></script>
+<script src="flv.min.js"></script>
+<script src="hls.min.js"></script>
+<script src="dash.all.min.js"></script>
+<script src="webtorrent.min.js"></script>
+<script src="pear-player.min.js"></script>
+
+	<h1><!-- <a href="javascript:window.location.reload()"> -->唐人街探案3<!-- </a> --></h1>
+	<div id="dplayer"></div>
+
+<script >
+const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    video: {
+        quality: [{
+            name: '超清',
+            url: 'http://112.98.96.34:60001/Detective.Chinatown.3.2021.HD1080P.X264.AAC.Mandarin.CHS.mp4'
+        }],
+        defaultQuality: 0,
+        type: 'hls',
+    }
+});
+</script>
